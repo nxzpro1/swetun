@@ -273,7 +273,7 @@
                 </ul>
                 
                 <p>
-                    <a href="#" class="button">PRODUKTLISTA (PDF)</a>
+                    <a href="produktlista.pdf" class="button" target="_blank">PRODUKTLISTA (PDF)</a>
                     <a href="#" class="button">BESTÄLLNINGSFORMULÄR</a>
                 </p>
             </div>
@@ -345,14 +345,14 @@
                 });
             });
             
-            // Skapa en gammaldags alert när man klickar på knapparna
-            const buttons = document.querySelectorAll('.button');
-            buttons.forEach(button => {
-                button.addEventListener('click', function(e) {
+            // Endast Beställningsformulär-knappen visar alert
+            const orderButton = document.querySelector('.button[href="#"]');
+            if (orderButton) {
+                orderButton.addEventListener('click', function(e) {
                     e.preventDefault();
                     alert('Denna funktion är inte tillgänglig än. Vänligen ring oss istället!');
                 });
-            });
+            }
         });
     </script>
 </body>
